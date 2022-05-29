@@ -2,8 +2,6 @@ package com.example.expensetrackerapp;
 
 import android.os.Bundle;
 
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.view.View;
@@ -14,10 +12,10 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import com.example.expensetrackerapp.databinding.ActivityMainBinding;
-
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.expensetrackerapp.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -40,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DialogFragment dialog = new AddReceiptDialogFragment();
-                dialog.show(getSupportFragmentManager(), "AddReceiptDialog");
+                DialogFragment dialog = new AddCompanyDialogFragment();
+                dialog.show(getSupportFragmentManager(), "AddCompanyDialog");
             }
         });
     }
