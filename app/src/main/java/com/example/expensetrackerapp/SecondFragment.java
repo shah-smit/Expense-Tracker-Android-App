@@ -22,6 +22,7 @@ public class SecondFragment extends Fragment {
     ) {
 
         binding = FragmentSecondBinding.inflate(inflater, container, false);
+        getActivity().setTitle("Add New Receipt");
         return binding.getRoot();
 
     }

@@ -11,30 +11,30 @@ public class ReceiptContract {
 
     public static class ReceiptEntry implements BaseColumns {
         public static final String TABLE_NAME = "receipt";
+        public static final String COLUMN_NAME_INVOICE_ID = "invoice_id";
         public static final String COLUMN_NAME_COMPANY_ID = "company_id";
-        public static final String COLUMN_NAME_GST_AMOUNT = "gst_amount";
-        public static final String COLUMN_NAME_SERVICE_TAX_AMOUNT = "service_tax_amount";
         public static final String COLUMN_NAME_TOTAL_AMOUNT = "total_amount";
-        public static final String COLUMN_NAME_TIP_AMOUNT = "lastUpdatedTime";
+        public static final String COLUMN_NAME_CATEGORY = "category";
+        public static final String COLUMN_NAME_LAST_UPDATED_TIME = "lastUpdatedTime";
 
         private static final String SQL_CREATE_ENTRIES =
                 "CREATE TABLE " + CompanyContract.CompanyEntry.TABLE_NAME + " (" +
-                        CompanyContract.CompanyEntry._ID + " INTEGER PRIMARY KEY," +
-                        CompanyContract.CompanyEntry.COLUMN_NAME_NAME + " TEXT," +
-                        CompanyContract.CompanyEntry.COLUMN_NAME_ADDRESS + " TEXT," +
-                        CompanyContract.CompanyEntry.COLUMN_NAME_DESCRIPTION + " TEXT," +
-                        CompanyContract.CompanyEntry.COLUMN_NAME_OUTLET + " TEXT," +
-                        CompanyContract.CompanyEntry.COLUMN_NAME_LAST_UPDATED_TIME + " TEXT)";
+                        ReceiptContract.ReceiptEntry._ID + " INTEGER PRIMARY KEY," +
+                        ReceiptContract.ReceiptEntry.COLUMN_NAME_INVOICE_ID + " TEXT," +
+                        ReceiptContract.ReceiptEntry.COLUMN_NAME_COMPANY_ID + " INTEGER," +
+                        ReceiptContract.ReceiptEntry.COLUMN_NAME_CATEGORY + " TEXT," +
+                        ReceiptContract.ReceiptEntry.COLUMN_NAME_TOTAL_AMOUNT + " INTEGER," +
+                        ReceiptContract.ReceiptEntry.COLUMN_NAME_LAST_UPDATED_TIME + " TEXT)";
 
         private static final String SQL_DELETE_ENTRIES =
                 "DROP TABLE IF EXISTS " + CompanyContract.CompanyEntry.TABLE_NAME;
 
-        public static class CompanyDbHelper extends SQLiteOpenHelper {
+        public static class ReceiptDbHelper extends SQLiteOpenHelper {
             // If you change the database schema, you must increment the database version.
             public static final int DATABASE_VERSION = 1;
             public static final String DATABASE_NAME = "ExpenseTracker.db";
 
-            public CompanyDbHelper(Context context) {
+            public ReceiptDbHelper(Context context) {
                 super(context, DATABASE_NAME, null, DATABASE_VERSION);
             }
             public void onCreate(SQLiteDatabase db) {
