@@ -8,7 +8,7 @@
 
 
     <Button
-        android:id="@+id/button_first"
+        android:id="@+id/add_receipt_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="322dp"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_first"
+        app:layout_constraintTop_toBottomOf="@+id/add_receipt_button"
         app:layout_constraintVertical_bias="0.264" />
 
     <ImageView

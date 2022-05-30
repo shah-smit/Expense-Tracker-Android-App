@@ -11,9 +11,10 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:autofillHints="@string/prompt_email"
+        android:autofillHints="Company Id"
         android:hint="Company Id"
         android:inputType="text"
+        android:text=""
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,19 +35,32 @@
         app:layout_constraintTop_toBottomOf="@+id/companyId" />
 
     <EditText
-        android:id="@+id/outletId"
+        android:id="@+id/category"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:autofillHints="@string/prompt_password"
-        android:hint="Give a Unique Name for the Outlet"
-        android:imeActionLabel="@string/action_sign_in_short"
+        android:hint="Add Category"
+        android:imeActionLabel="Category"
         android:imeOptions="actionDone"
         android:inputType="text"
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/invoiceId" />
+
+    <EditText
+        android:id="@+id/description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:hint="Add Short Description"
+        android:imeActionLabel="Category"
+        android:imeOptions="actionDone"
+        android:inputType="text"
+        android:selectAllOnFocus="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category" />
 
     <EditText
         android:id="@+id/totalAmount"
@@ -61,7 +75,7 @@
         android:selectAllOnFocus="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/outletId" />
+        app:layout_constraintTop_toBottomOf="@+id/description" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline"
@@ -77,6 +91,7 @@
         android:layout_gravity="start"
         android:enabled="true"
         android:text="Add Receipt"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="@id/guideline"
@@ -84,10 +99,11 @@
         app:layout_constraintTop_toBottomOf="@+id/totalAmount" />
 
     <Button
-        android:id="@+id/button_second"
+        android:id="@+id/go_previous_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/previous"
+        android:layout_marginTop="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/totalAmount"

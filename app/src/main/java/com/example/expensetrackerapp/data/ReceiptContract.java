@@ -15,14 +15,16 @@ public class ReceiptContract {
         public static final String COLUMN_NAME_COMPANY_ID = "company_id";
         public static final String COLUMN_NAME_TOTAL_AMOUNT = "total_amount";
         public static final String COLUMN_NAME_CATEGORY = "category";
+        public static final String COLUMN_NAME_DESCRIPTION = "description";
         public static final String COLUMN_NAME_LAST_UPDATED_TIME = "lastUpdatedTime";
 
         private static final String SQL_CREATE_ENTRIES =
-                "CREATE TABLE " + CompanyContract.CompanyEntry.TABLE_NAME + " (" +
+                "CREATE TABLE " + ReceiptContract.ReceiptEntry.TABLE_NAME + " (" +
                         ReceiptContract.ReceiptEntry._ID + " INTEGER PRIMARY KEY," +
                         ReceiptContract.ReceiptEntry.COLUMN_NAME_INVOICE_ID + " TEXT," +
                         ReceiptContract.ReceiptEntry.COLUMN_NAME_COMPANY_ID + " INTEGER," +
                         ReceiptContract.ReceiptEntry.COLUMN_NAME_CATEGORY + " TEXT," +
+                        ReceiptContract.ReceiptEntry.COLUMN_NAME_DESCRIPTION + " TEXT," +
                         ReceiptContract.ReceiptEntry.COLUMN_NAME_TOTAL_AMOUNT + " INTEGER," +
                         ReceiptContract.ReceiptEntry.COLUMN_NAME_LAST_UPDATED_TIME + " TEXT)";
 

@@ -7,13 +7,15 @@ public class ReceiptEntity {
     private int totalAmount;
     private String category;
     private String lastUpdatedTime;
+    private String description;
 
-    public ReceiptEntity(String invoiceId, int companyId, int totalAmount, String category, String lastUpdatedTime) {
+    public ReceiptEntity(String invoiceId, int companyId, int totalAmount, String category, String lastUpdatedTime, String description) {
         this.invoiceId = invoiceId;
         this.companyId = companyId;
         this.totalAmount = totalAmount;
         this.category = category;
         this.lastUpdatedTime = lastUpdatedTime;
+        this.description = description;
     }
 
     public void setId(int id) {
@@ -42,6 +44,10 @@ public class ReceiptEntity {
 
     public String getLastUpdatedTime() {
         return lastUpdatedTime;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     @Override

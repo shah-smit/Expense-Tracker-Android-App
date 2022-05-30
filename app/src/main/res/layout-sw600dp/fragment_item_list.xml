@@ -7,7 +7,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/item_list"
-        android:name="com.example.myapplication.ItemListFragment"
+        android:name="com.example.expensetrackerapp.list_view.ItemListFragment"
         android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_marginStart="@dimen/container_margin"
@@ -17,7 +17,7 @@
         app:layout_constraintEnd_toStartOf="@id/guideline"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:context="com.example.myapplication.ItemDetailHostActivity"
+        tools:context="com.example.expensetrackerapp.list_view.ItemDetailHostActivity"
         tools:listitem="@layout/item_list_content" />
 
     <androidx.constraintlayout.widget.Guideline

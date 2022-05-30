@@ -39,7 +39,7 @@ public class FirstFragment extends Fragment {
             }
         });
 
-        var addReceipt = view.findViewById(R.id.button_first);
+        var addReceipt = view.findViewById(R.id.add_receipt_button);
         addReceipt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

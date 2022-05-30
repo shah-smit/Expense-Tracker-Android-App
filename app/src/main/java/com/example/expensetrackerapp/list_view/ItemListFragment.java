@@ -19,9 +19,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.expensetrackerapp.R;
+import com.example.expensetrackerapp.data.ReceiptContract;
 import com.example.expensetrackerapp.databinding.FragmentItemListBinding;
 import com.example.expensetrackerapp.databinding.ItemListContentBinding;
 import com.example.expensetrackerapp.list_view.placeholder.PlaceholderContent;
+import com.example.expensetrackerapp.repository.ReceiptRepository;
 
 import java.util.List;
 
@@ -61,11 +63,13 @@ public class ItemListFragment extends Fragment {
     };
 
     private FragmentItemListBinding binding;
+    private ReceiptRepository receiptRepository;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         binding = FragmentItemListBinding.inflate(inflater, container, false);
+        receiptRepository = new ReceiptRepository(new ReceiptContract.ReceiptEntry.ReceiptDbHelper(getContext()));
         return binding.getRoot();
 
     }
@@ -91,7 +95,8 @@ public class ItemListFragment extends Fragment {
     ) {
 
         recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(
-                PlaceholderContent.ITEMS,
+                //TODO:: Change Here!!!
+                receiptRepository.retrievePlaceHolderItems(),
                 itemDetailFragmentContainer
         ));
     }
